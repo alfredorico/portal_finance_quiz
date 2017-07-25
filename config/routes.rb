@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :v1 do
+    resources :questions, only: [:index, :show], defaults: { format: :json } do
+      get :with_choices, on: :member
+    end
+    resources :full_questions_listing, only: :create
+  end
 end
