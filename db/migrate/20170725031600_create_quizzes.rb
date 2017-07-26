@@ -5,6 +5,7 @@ class CreateQuizzes < ActiveRecord::Migration[5.1]
       # Defaults to initial conditions of an empty quiz
       t.integer :total_score, default: 0
       t.integer :correct_answers_counting, default: 0
+      t.integer :failed_answers_counting, default: 0
       t.boolean :terminated, default: false
       t.timestamps
     end

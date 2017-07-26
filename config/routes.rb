@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     # Mainly resources
 
     resources :quiz, only: [:create, :show] do
-      get :grading, on: :member
+      get :grade, on: :member
+      get :answered_incorrectly, on: :member
       resources :quiz_reply, only: [:update, :show]
     end
 

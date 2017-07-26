@@ -5,6 +5,7 @@ class CreateQuizReplies < ActiveRecord::Migration[5.1]
       t.text :selected_answers
       t.boolean :locked, default: false # Change to true when the questions has been answered.
                                         # This is for avoid to change the response
+      t.boolean :correct, default: false                                  
       t.timestamps
     end
     reversible do |dir|

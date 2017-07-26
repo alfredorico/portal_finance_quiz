@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 20170725033728) do
 
   create_table "answer_choices", force: :cascade do |t|
+    t.string "code"
     t.text "answer", null: false
     t.boolean "correct", default: false
     t.integer "question_id", null: false
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170725033728) do
     t.integer "question_id"
     t.text "selected_answers"
     t.boolean "locked", default: false
+    t.boolean "correct", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "quiz_id"
@@ -43,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170725033728) do
   create_table "quizzes", id: :string, force: :cascade do |t|
     t.integer "total_score", default: 0
     t.integer "correct_answers_counting", default: 0
+    t.integer "failed_answers_counting", default: 0
     t.boolean "terminated", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

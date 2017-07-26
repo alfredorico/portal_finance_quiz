@@ -1,7 +1,7 @@
 json.quiz_instance do
-  json.id @quiz.id
+  json.id @quiz_instance.id
   json.questions do
-    json.array!  @quiz.quiz_replies do |reply|
+    json.array!  @quiz_instance.quiz_replies do |reply|
       json.id reply.question.id
       json.question reply.question.question
       json.answers do
