@@ -31,23 +31,22 @@ ActiveRecord::Schema.define(version: 20170725033728) do
   end
 
   create_table "quiz_replies", force: :cascade do |t|
-    t.integer "quiz_id"
     t.integer "question_id"
     t.text "selected_answers"
     t.boolean "locked", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "quiz_id"
     t.index ["question_id"], name: "index_quiz_replies_on_question_id"
-    t.index ["quiz_id"], name: "index_quiz_replies_on_quiz_id"
   end
 
-  create_table "quizzes", force: :cascade do |t|
-    t.string "uniqueid"
-    t.integer "total_score"
-    t.integer "wrong_answers_counting"
+  create_table "quizzes", id: :string, force: :cascade do |t|
+    t.integer "total_score", default: 0
+    t.integer "correct_answers_counting", default: 0
     t.boolean "terminated", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["id"], name: "sqlite_autoindex_quizzes_1", unique: true
   end
 
 end
