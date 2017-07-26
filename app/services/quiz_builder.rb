@@ -11,7 +11,6 @@ module QuizBuilder
       end
       @quiz
     end
-    nil
   end
 
   def generate_uniqueid
