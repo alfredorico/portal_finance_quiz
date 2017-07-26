@@ -1,5 +1,5 @@
 class V1::QuizController < ApplicationController
-  before_action :set_question, only: [:with_choices]
+  before_action :set_question, only: [:show]
 
   # The Quiz API must provide an Endpoint to create a new Instance of a Quiz.
   def create
@@ -15,7 +15,6 @@ class V1::QuizController < ApplicationController
 
   # The Quiz API must provide an Endpoint to return an Instance of a Quiz by providing the Unique ID as an Input Argument
   def show
-
   end
 
   def grading
