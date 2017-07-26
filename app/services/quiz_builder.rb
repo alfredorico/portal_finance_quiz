@@ -1,5 +1,7 @@
 module QuizBuilder
   extend self
+
+  # Each Instance of a Quiz must have a Unique ID
   def instantiate
     ActiveRecord::Base.transaction do
       @quiz = Quiz.create(id: generate_uniqueid)
